@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Shopping Cart</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="head">
+                <h4>MeShop<h4>
+                <img width="40px" height="40px"  style="border-radius: 50%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa6e4sfL_p0aT5sC8HGqr0FheA4TFV8ZeICA&s" alt="logo">
+            </div>
+            <div id="hamburger" class="hamburger-menu" onclick="toggleMenu()">☰</div>
+            <div id="nav-item">
+            <a id="ho" href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="signup.html">Signup</a>
+            <a id="ca" href="cart.html">My Cart</a>
+            <a id="sh" href="shop.html">Shop</a>
+            <a  id="pr" href="profile.html">Profile</a>
+            
+            </div>
+        </nav>
+    </header>
+    <main id="main1">
+        <div>
+            <h1>Welcome to the MeShop</h1>
+            <p>Discover the best products at amazing prices!</p>
+        </div>
+        <section class="auth-buttons">
+            <button onclick="window.location.href='login.html'" class="btn">Login</button>
+            <button onclick="window.location.href='signup.html'" class="btn">Signup</button>
+        </section>
+        
+    </main>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-item');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+    
+</body>
+</html> 

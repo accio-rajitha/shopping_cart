@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="./css/styles.css"> 
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="head">
+                <h4>MeShop</h4>
+                <img width="40px" height="40px" style="border-radius: 50%;" 
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa6e4sfL_p0aT5sC8HGqr0FheA4TFV8ZeICA&s" alt="logo">
+            </div>
+            <div id="hamburger" class="hamburger-menu" onclick="toggleMenu()">☰</div>
+            <div id="nav-item">
+                <a id="ho" href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="signup.html">Signup</a>
+                <a id="ca" href="cart.html">My Cart</a>
+                <a id="sh" href="shop.html">Shop</a>
+                <a id="pr" href="profile.html">Profile</a>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <h1>Your Cart</h1>
+        <button onclick="window.location.href='shop.html'">Back to Shop</button>
+    </section>
+
+    <main>
+        <div id="cart-container"></div>
+
+       
+        <div id="price-details-container"></div>
+
+        <div id="cart-summary">
+            <h3>Total Price: $<span id="total-price">0.00</span></h3>
+            <button id="rzp-button1">Pay</button> 
+        </div>
+    </main>
+
+    <script src="./js/cart.js"></script> 
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script> 
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-item');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+    
+</body>
+
+</html>

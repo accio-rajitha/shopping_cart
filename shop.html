@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Shopping Cart</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="./js/shop.js" defer></script>
+    <script src="./js/auth.js" defer></script>
+</head>
+<body>
+    
+    <header>
+        <nav>
+        <div id="head">
+            <h4>Shopping Cart<h4>
+            <img width="40px" height="40px"  style="border-radius: 50%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa6e4sfL_p0aT5sC8HGqr0FheA4TFV8ZeICA&s" alt="logo">
+        </div>
+        <div id="hamburger" class="hamburger-menu" onclick="toggleMenu()">☰</div>
+        <div id="nav-item">
+            <a id="ho" href="index.html">Home</a>
+            <a href="shop.html" class="active">Shop</a>
+            <a id="ca" href="cart.html">My Cart</a>
+            <a href="#" onclick="logout()">Logout</a>
+            <a  id="pr" href="profile.html">Profile</a>
+        </div>
+        </nav>
+    </header>
+    <main>
+        <div class="shop-container">
+            <aside class="sidebar">
+                <h2>Filters</h2>
+                <section>
+                    <h3>Colors</h3>
+                    <ul>
+                        <li><input type="checkbox" id="red" value="red"><label for="red">Red</label></li>
+                        <li><input type="checkbox" id="blue" value="blue"><label for="blue">Blue</label></li>
+                        <li><input type="checkbox" id="green" value="green"><label for="green">Green</label></li>
+                        <li><input type="checkbox" id="black" value="black"><label for="black">Black</label></li>
+                        <li><input type="checkbox" id="white" value="white"><label for="white">White</label></li>
+                    </ul>
+                </section>
+
+
+                
+                <section>
+                    <h3>Sizes</h3>
+                    <ul>
+                        <li><input type="checkbox" id="small" value="small"><label for="small">S</label></li>
+                        <li><input type="checkbox" id="medium" value="medium"><label for="medium">M</label></li>
+                        <li><input type="checkbox" id="large" value="large"><label for="large">L</label></li>
+                        <li><input type="checkbox" id="xl" value="xl"><label for="xl">XL</label></li>
+                    </ul>
+                </section>
+
+
+                
+                <section>
+                    <h3>Ratings</h3>
+                    <ul>
+                        <li><input type="radio" name="rating" id="4stars" value="4"><label for="4stars">4★ & Above</label></li>
+                        <li><input type="radio" name="rating" id="3stars" value="3"><label for="3stars">3★ & Above</label></li>
+                        <li><input type="radio" name="rating" id="2stars" value="2"><label for="2stars">2★ & Above</label></li>
+                        <li><input type="radio" name="rating" id="1star" value="1"><label for="1star">1★ & Above</label></li>
+                    </ul>
+                </section>
+
+
+                
+                <section>
+                    <h3>Price Range</h3>
+                    <input type="range" id="price-range" min="0" max="1000" step="50" value="1000">
+                    <p>Up to $<span id="price-value">1000</span></p>
+                </section>
+
+
+                
+                <button onclick="applyFilters()">Apply Filters</button>
+            </aside>
+
+
+           
+            <section class="products">
+                
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="🔍 Search ..." oninput="searchProducts()">
+                </div>
+               
+               
+
+
+                
+                <div class="categories">
+                    <button id="all" onclick="filterByCategory('all')">All</button>
+                    <button onclick="filterByCategory('men\'s clothing')">Men's Clothing</button>
+                    <button onclick="filterByCategory('women\'s clothing')">Women's Clothing</button>
+                    <button onclick="filterByCategory('electronics')">Electronics</button>
+                    <button onclick="filterByCategory('jewelery')">Jewelry</button>
+                </div>
+               
+               
+
+
+               
+                 <div id="product-grid">
+  
+    <div class="product-card">
+        <img class="product-image" src="https://via.placeholder.com/250x200" alt="Product">
+        <h3 class="product-title">Product Title</h3>
+        <p class="product-price">$19.99</p>
+       
+       
+        <div class="product-options">
+            <div class="option">
+                <label for="color">Color</label>
+                <select class="product-select" id="color">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                </select>
+            </div>
+            <div class="option">
+                <label for="size">Size</label>
+                <select class="product-select" id="size">
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                </select>
+            </div>
+            <div class="option">
+                <label for="quantity">Quantity</label>
+                <input type="number" class="quantity-input" id="quantity" value="1" min="1">
+            </div>
+        </div>
+       
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+
+
+               
+            </section>
+        </div>
+    </main>
+    <script>
+       
+        window.onload = function() {
+            if (!checkLogin()) {
+                window.location.href = "login.html";
+            }
+        };
+    </script>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-item');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+    
+    
+</body>
+</html>
+
+
+
+
+

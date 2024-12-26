@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Shopping Cart</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <script src="./js/auth.js" defer></script>
+</head>
+<body onload="loadUserProfile()">
+    <header>
+        <nav>
+            <div id="head">
+                <h4>Shopping Cart</h4>
+                <img width="40px" height="40px" style="border-radius: 50%;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa6e4sfL_p0aT5sC8HGqr0FheA4TFV8ZeICA&s" alt="logo">
+            </div>
+            <div id="hamburger" class="hamburger-menu" onclick="toggleMenu()">☰</div>
+            <div id="nav-item">
+                <a id="ho" href="index.html">Home</a>
+                <a id="ca" href="cart.html">My Cart</a>
+                <a href="#" onclick="logout()">Logout</a>
+                <a id="pr" href="profile.html">Profile</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main4">
+        <section class="auth-section2">
+            <h2 id="pro">My Profile</h2>
+            <form id="profile-form">
+                
+                <input type="text" id="firstname" placeholder="First Name">
+                <input type="text" id="lastname" placeholder="Last Name">
+                <input type="email" id="email" readonly>
+                <button id="save" type="button" onclick="updateUserProfile()">Save Changes</button>
+            </form>
+
+            <h2 id="edit">Edit Password</h2>
+
+            <form id="password-change-form">
+                <input type="password" id="old-password" placeholder="Old Password">
+                <input type="password" id="new-password" placeholder="New Password">
+                <input type="password" id="confirm-password" placeholder="Confirm New Password">
+                <button id="save1" type="button" onclick="changePassword()">Change Password</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-item');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+    
+</body>
+</html>
